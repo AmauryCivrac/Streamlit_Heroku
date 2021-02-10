@@ -12,11 +12,11 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 ### Titre de l'application
-st.title('Application STREAMLIT pour HEROKU')
+st.title('STREAMLIT App deployed with HEROKU')
 
 ## Display Text
 
-st.write('Hello Team')
+st.write('Hello Team !')
 
 ## Draw a line chart
 st.markdown('## ** Draw a line chart **')
@@ -48,8 +48,8 @@ if genre == 'Comedy':
 else:
     c1.write("You didn't select comedy.")
 
-## Option
-c2.markdown('## ** Selectobox ** ')
+## Option with selectbox
+c2.markdown('## ** Selectbox ** ')
 option = c2.selectbox('How would you like to be contacted?',('Email', 'Home phone', 'Mobile phone'))
 stg = 'You selected:' + option 
 c2.write(stg)
