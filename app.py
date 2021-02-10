@@ -14,4 +14,42 @@ st.set_page_config(layout="wide")
 ### Titre de l'application
 st.title('Application STREAMLIT pour HEROKU')
 
-st.write('Hello World')
+## Display Text
+
+st.write('Hello Team')
+
+## Draw a line chart
+st.markdown('## ** Draw a line chart **')
+
+chart_data = pd.DataFrame(
+     np.random.randn(20, 3),
+     columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
+
+## Plot a map
+st.markdown('## ** Plot a map **')
+
+map_data = pd.DataFrame(
+    np.random.randn(200, 2) / [50, 50] + [48.86, 2.35],
+    columns=['lat', 'lon'])
+
+st.map(map_data)
+
+## Space out the columns so each one has the same size
+c1, c2 = st.beta_columns((1, 1))
+
+## Plot text depending on button choice
+c1.markdown('## ** Button choice ** ')
+genre = c1.radio( "What's your favorite movie genre",('Comedy', 'Drama', 'Documentary'))
+
+if genre == 'Comedy':
+    c1.write('You selected comedy.')
+else:
+    c1.write("You didn't select comedy.")
+
+## Option
+c2.markdown('## ** Selectobox ** ')
+option = c2.selectbox('How would you like to be contacted?',('Email', 'Home phone', 'Mobile phone'))
+stg = 'You selected:' + option 
+c2.write(stg)
