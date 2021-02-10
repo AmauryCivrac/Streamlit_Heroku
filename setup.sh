@@ -6,5 +6,6 @@ echo "[server]
 headless = true
 port = $PORT
 enableCORS = false
+enabledTransports = ['ws', 'wss']
 baseUrlPath = 'app-65'
 " > ~/.streamlit/config.toml
